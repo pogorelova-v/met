@@ -1,0 +1,44 @@
+:root{
+    font-family: "HelveticaNeueCyr", sans-serif;
+    font-weight: 550; 
+    box-sizing: border-box; 
+    font-size: 0.520834vw; 
+
+    // @include wide-screen {
+    //     font-size: 0.5208vw;
+    // } 
+}
+
+*,
+*::before,
+*::after { 
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable; 
+}
+
+body { 
+  font-size: 1.6rem;
+  line-height: 2.72rem;  
+  color: $black; 
+  scrollbar-gutter: stable; 
+  overflow-x: hidden; 
+  background-color: $bg;
+  color: $white;
+
+//   &.not-scroll{
+//     overflow: hidden;  
+//   }
+}
+
+.container{
+  width: 131.4rem;
+  margin: 0 auto;
+
+    &_max{ 
+      width: 176rem;
+    }
+}

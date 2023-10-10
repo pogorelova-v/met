@@ -1,0 +1,187 @@
+header{ 
+    position: relative;
+    border-bottom: 0.1rem solid $bg-line;
+     
+    .additionally{
+        position: absolute; 
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: space-between; 
+
+        .logo{
+            display: flex;
+            align-items: center;
+            
+            a{
+                display: block;
+                width: 6rem;
+                height: 2.4rem;
+
+                svg{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        .proceed{
+            display: flex;
+            gap: 2.4rem;
+
+            a{
+                display: block;
+                width: 3.2rem;
+                height: 3.2rem;
+
+                svg{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: 0.3s;
+                }
+
+                &:hover{
+                    color: $red;
+                }
+            }
+        }
+    }
+
+    .main{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 7.3rem;
+        z-index: $z-on-top;
+
+        nav{
+            text-transform: uppercase;
+            color: $main-menu;
+            font-size: 1.2rem;
+            line-height: 1.186rem;
+            letter-spacing: 0.06rem;
+            
+            ul{
+                display: flex;
+                gap: 6.7rem;
+                
+                li{ 
+                    position: relative;
+                    a{
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        height: 7.3rem;
+                        transition: 0.3s;
+
+                        &::after{
+                            position: absolute;
+                            content: '';
+                            left: 0;
+                            bottom: 0;
+                            height: 0.1rem;
+                            width: 0;
+                            background-color: $red;
+                            transition: 0.3s;
+                        }
+                        
+                        &.active,
+                        &:hover{         
+                            color: $white;                   
+                            &::after{
+                                width: 100%;
+                            }
+                        }  
+                    }
+
+                    .sublist{
+                        display: none;
+                        position: absolute;
+                        top: 7.5rem;
+                        left: -2.4rem;
+                        padding-top: 2.7rem;
+                        z-index: $z-on-top;
+                        
+                        ul{
+                            flex-direction: column;
+                            gap: 2rem; 
+                            background-color: $bg-link;
+                            border-radius: 1.5rem;
+                            padding: 2.9rem 3.2rem;
+                            text-transform: none;
+                            font-size: 1.4rem;
+                            line-height: 1.59rem;
+                            letter-spacing: 0.1rem;
+
+                            li{
+                                position: relative;
+
+                                a{
+                                    display: block;
+                                    height: fit-content;  
+                                    width: fit-content;
+                                    white-space: nowrap;
+                                } 
+                            }
+                        }
+
+                       &::after{
+                            position: absolute;
+                            content: '';
+                            top: 1.5rem;
+                            left: 4.5rem;
+                            width: 4rem;
+                            height: 4rem;
+                            transform: rotate(45deg);
+                            border-radius: 1rem; 
+                            background-color: $bg-link;
+                            z-index: $z-bg; 
+                            transition: 0.3s;
+                       } 
+                    }
+                }
+            }
+        }
+
+        .make{
+            display: flex;
+            align-items: center;
+            gap: 7.2rem;
+            z-index: $z-on-top;
+
+            .contact{ 
+                font-size: 1.4rem; 
+                letter-spacing: 0.07rem;
+            }
+
+            .language{
+
+                button{
+                    display: flex;
+                    align-items: center;
+                    gap: 0.8rem;
+                    width: fit-content;
+                    text-transform: uppercase;
+                    width: 7.2rem;
+
+                    svg{
+                        transition: 0.3s;
+
+                        &.rotate{
+                            transform: rotate(180deg);
+                        }
+                    }
+
+                    &:hover{
+                        svg{
+                            color: $red; 
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

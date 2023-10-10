@@ -1,0 +1,12 @@
+@mixin break($point) {
+    @media(min-width: $point) {
+        @content;
+    }
+}
+
+// @mixin wide-screen {
+//   @media (min-width: 1501px) {
+//     @content;
+//   }
+// } 
+ 

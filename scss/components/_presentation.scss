@@ -1,0 +1,504 @@
+.presentation{
+    position: relative;
+    height: 79rem;
+    margin-top: 7.3rem;
+    margin-bottom: 12.7rem;
+
+    .container{
+        height: 100%;
+        position: relative;
+
+        .tagline{
+            position: absolute;
+            top: 2rem;
+            left: 0;
+            width: 37rem;
+            font-weight: 700;
+            font-size: 3.2rem;
+            line-height: 4.32rem;
+            color: $main-menu;
+        }
+
+        .video-play{
+            position: absolute;
+            top: 0.4rem;
+            right: -2rem;
+            z-index: $z-on-top;
+
+            a{
+                display: block;
+
+                svg{ 
+                    width: 13rem;
+                    height: 13rem;
+        
+                    &.text{
+                        position: absolute;
+                        left: 0;
+                        top: 0; 
+                        animation: circling 15s infinite linear;
+                    }
+                }
+            }
+        }
+
+        .bye{ 
+            position: absolute;
+            bottom: 5.8rem;
+            left: 0;
+            overflow: hidden;
+            z-index: $z-on-top;
+            
+            a{
+                display: block; 
+                padding-bottom: 0.3rem;
+                border-bottom: 0.2rem solid $main-menu;
+                font-weight: 550;
+                letter-spacing: 0.048rem;
+                color: $main-menu;
+                text-transform: uppercase; 
+
+                &::after{
+                    position: absolute;
+                    content: '';
+                    bottom: 0;
+                    left: -100%;
+                    width: 100%;
+                    height: 0.2rem;
+                    background-color: $red;
+                    transition: 0.3s;
+                }
+
+                &:hover{
+
+                    &::after{
+                        left: 0;
+                    }
+                }
+            }
+        }
+
+        .gosreestr{ 
+            position: absolute;
+            bottom: 4.5rem;
+            right: 0; 
+            z-index: $z-on-top;
+        }
+
+        a{
+            transition: 0.3s;
+            color: $main-menu; 
+
+            &:hover{
+                color: $white;
+            }
+        }
+
+        .elem{
+            position: absolute;
+            width: 100%;
+            height: 100%; 
+
+            .title{
+                position: absolute; 
+                z-index: $z-on-top;
+
+                button{
+                    font-size: 3.2rem;
+                    font-weight: 700;
+                    line-height: 9rem;
+                    transition: 0.5s;
+                }
+
+                .subtitle{
+                    position: absolute; 
+                    pointer-events: none;
+                    opacity: 0;
+                    transition: 0.5s;
+                    text-transform: uppercase;
+                    letter-spacing: 0.048rem;
+
+                    &::after{
+                        position: absolute;
+                        content: '';
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: -11rem;
+                        width: 0;
+                        height: 0.1rem;
+                        transition: 0.5s;
+                        background-color: $white;
+                    }
+
+                    &::before{
+                        position: absolute;
+                        content: '';
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: -11rem;
+                        width: 0;
+                        height: 0.2rem;
+                        transition: 0.5s;
+                        background-color: $red;
+                        z-index: $z-on-top;
+                    }
+
+                    &:hover::before{ 
+                        width: 8.8rem;
+                    }
+
+                }
+
+                &::after{
+                    position: absolute;
+                    content: ''; 
+                    width: 7.2rem;
+                    height: 7.2rem;
+                    border-radius: 50%;
+                    border: 1px solid $gray-font;
+                    transition: 0.5s;
+                }
+
+                &::before{
+                    position: absolute;
+                    content: ''; 
+                    width: 0.8rem;
+                    height: 0.8rem;
+                    border-radius: 50%;
+                    background-color: $red;
+                    transition: 0.5s;
+                }
+
+                &.hover{
+
+                    &::after{ 
+                        animation: pulse 1s linear infinite; 
+                    } 
+                }
+            }
+
+            .preview{
+                position: absolute; 
+                width: 49.1rem;
+                height: 50rem;
+                filter: blur(10px);
+                z-index: $z-bg;
+                transition: 0.5s;
+                
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            &_left{
+                
+                .title{ 
+                    top: 31rem; 
+                    left: -11.5rem; 
+
+                    &::after{ 
+                        right:  -10rem;
+                        top: 1rem; 
+                    }
+    
+                    &::before{ 
+                        right: -6.8rem;
+                        top: 4.1rem; 
+                    }
+
+                    .subtitle{ 
+                        bottom: -3.5rem;
+                        left: 11.4rem; 
+                    }
+                }
+    
+                .preview{ 
+                    top: 15rem;
+                    left: -8rem; 
+                }
+            }
+
+            &_right{
+                
+                .title{ 
+                    top: 31.5rem; 
+                    right: -11.5rem;  
+
+                    button{
+                        text-align: right;
+                    }
+
+                    &::after{ 
+                        left:  -10.5rem;
+                        top: 0.5rem; 
+                    }
+    
+                    &::before{ 
+                        left: -7.3rem;
+                        top: 3.9rem; 
+                    }
+
+                    .subtitle{ 
+                        bottom: -3.5rem;
+                        right: 0; 
+                    }
+                }
+    
+                .preview{ 
+                    top: 14rem;
+                    right: 8rem; 
+                }
+            }
+            
+            &.active{
+
+                .preview{ 
+                    filter: blur(0); 
+                    transform: scale(1.45);
+                }
+
+                .title{
+                    position: absolute; 
+                    max-width: 58rem;
+    
+                    button{
+                        font-size: 7.2rem;
+                        font-weight: 700; 
+                        cursor: auto;
+                    }
+    
+                    .subtitle{
+                        pointer-events: auto;
+                        opacity: 1;
+
+                        &::after{
+                            width: 8.8rem;
+                        }
+                    }
+    
+                    &::after{
+                        transform: scale(0);
+                    }
+    
+                    &::before{
+                        transform: scale(0);
+                    }
+
+                    &.hover{
+
+                        &::after{ 
+                            animation: none; 
+                        } 
+                    } 
+                }
+            }
+
+            &_left.active{
+
+                .preview{  
+                    left: 32rem; 
+                } 
+            }
+
+            &_right.active{
+
+                .preview{  
+                    right: 45rem; 
+                    top: 17.5rem;
+                } 
+
+                .title{
+                    
+                    top: 24.5rem; 
+                    right: 0rem;  
+                }
+            }
+        }
+    }
+
+    .down{
+        position: absolute;
+        left: 8rem;
+        transform: rotate(-90deg);
+        transform-origin: 0 0;
+        width: 79rem; 
+
+        &_list{
+            left: 10rem;  
+            bottom: -4.5rem;
+
+            ul{
+                display: flex;
+                gap: 2.5rem;
+                flex-direction: row-reverse;
+                font-size: 1.3rem;
+                line-height: 1.755rem;
+                letter-spacing: 0.13rem;
+                
+                a{
+                    transition: 0.3s;
+                    color: $gray-font;
+    
+                    &.active{
+                        color: $red;
+                    }
+
+                    &:hover{
+                        color: $white;
+                    }
+                }
+            }
+        }
+
+        &_button{ 
+            bottom: -4rem;
+            width: fit-content;
+            
+            a{
+                display: flex; 
+                align-items: center;
+                gap: 0.5rem;
+                font-weight: 700;
+                font-size: 1.3rem;
+                letter-spacing: 0.4rem;
+
+                .switch{
+                    position: relative;
+                    height: 5.6rem;
+                    width: 5.6rem;
+
+                    span{
+                        display: block;
+                        height: 2.5rem;
+                    }
+
+                    svg{
+                        width: 100%;
+                        height: 100%;
+                        transform: rotate(90deg);
+                        transition: 0.3s;
+                        
+                        &.circle{
+                            position: absolute;
+                            left: 0;
+                        }
+                    }
+                }
+
+                &:hover{
+
+                    .switch{ 
+
+                        svg{ 
+                            &.circle{ 
+                                left: 1rem;
+                            }
+                            &.wrap{
+                                color: $red;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .social-network{
+        position: absolute;
+        right: 2.7rem;
+        top: 24rem;
+
+        ul{
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+
+            li{
+                display: flex;
+                justify-content: flex-end;
+                height: 4.8rem;
+                width: 19.2rem; 
+                overflow: hidden;
+                border-radius: 0 5.1rem 5.1rem 0;
+
+                a{
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 4.8rem;
+                    height: 4.8rem;
+                    border-radius: 50%;
+                    background-color: $bg-link;
+
+                    svg{
+                        width: 1.6rem;
+                        height: 1.6rem;
+                    }
+
+                    span{
+                        position: absolute;
+                        display: flex;
+                        align-items: center;
+                        right: -19.2rem;
+                        height: 4.8rem;
+                        width: 19.2rem;
+                        padding-left: 2.5rem;
+                        border-radius: 5rem;
+                        background-color: $bg-link;
+                        z-index: $z-bg;
+                        transition: 0.3s;
+                    }
+
+                    &:hover{ 
+
+                        span{
+                            right: 0;
+                        }
+
+                        &.telegram{ 
+                            background-color: $telegram;
+                        }
+
+                        &.whatsApp{
+                            background-color: $whatsApp;
+                        }
+
+                        &.mail{
+                            background-color: $e-Mail;
+                        }
+
+                        &.viber{
+                            background-color: $viber;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes circling {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.2);
+      opacity: 0;
+    }
+  }
