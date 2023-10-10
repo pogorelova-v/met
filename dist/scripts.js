@@ -20,6 +20,27 @@ $(document).ready(function () {
         $(this).attr('data-language-switch-new',  $(this).attr('data-language-switch')); 
         $(this).attr('data-language-switch',  $(this).find('span').text());  
     });
+ 
+
+    // закрепление хедера скролле
+    let scrollPrev = $(window).scrollTop(); 
+
+    $(window).scroll(function () {
+        
+      let scrollTop = $(window).scrollTop(); 
+      let showHeader = $("[data-header]").outerHeight();
+       
+      if (scrollPrev > scrollTop && scrollTop > showHeader) {
+        console.log('op');
+        $("[data-header-sticky]").css('top', '0');
+        return;
+      } else {
+        $("[data-header-sticky]").css('top', '-7.3rem');
+      }
+
+      scrollPrev = scrollTop;
+    
+    });
 });
 $(document).ready(function () {
     

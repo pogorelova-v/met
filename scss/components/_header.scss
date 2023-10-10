@@ -185,3 +185,13 @@ header{
         }
     }
 }
+ 
+header.sticky{
+    position: fixed;
+    left: 0;
+    top: -7.3rem;
+    width: 100%;
+    background-color: $bg;
+    transition: 0.3s;
+    z-index: $z-sticky-header;
+}
