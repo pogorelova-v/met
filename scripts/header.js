@@ -30,14 +30,13 @@ $(document).ready(function () {
       let scrollTop = $(window).scrollTop(); 
       let showHeader = $("[data-header]").outerHeight();
        
-      if (scrollPrev > scrollTop && scrollTop > showHeader) {
-        console.log('op');
+      if (scrollPrev > scrollTop && scrollTop > showHeader) { 
         $("[data-header-sticky]").css('top', '0');
         return;
       } else {
         $("[data-header-sticky]").css('top', '-7.3rem');
-      }
-
+      } 
+      
       scrollPrev = scrollTop;
     
     });

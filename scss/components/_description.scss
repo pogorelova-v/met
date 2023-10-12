@@ -1,0 +1,301 @@
+.description{ 
+   
+    .container{
+        display: grid; 
+        gap: 3rem;   
+        grid-auto-rows: 60rem 78.2rem;  
+
+        .group-three-elem{
+            display: grid;
+            gap: 3rem;
+            grid-template-columns: 53rem auto;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-areas: 
+            'vert topp'
+            'vert bott' ;
+        }
+
+        margin-bottom: 12.8rem;
+    }
+
+    .elem{
+        position: relative;
+        background-color: $bg-card;
+        border-radius: 2.8rem; 
+        overflow: hidden;
+
+        .background{
+            position: absolute;  
+            height: 100%;
+            width: fit-content;
+            border-radius: 2.8rem; 
+            overflow: hidden;
+            
+            img{
+                height: 100%;
+                width: auto;
+                object-fit: contain;
+            }
+        }
+
+        .content{
+            position: relative; 
+            z-index: $z-on-top;    
+            
+            .table-group{
+                display: flex;
+                gap: 7.2rem;
+                margin-top: 5.4rem;
+
+                table{
+                    width: 27rem;
+                    color: $main-menu;
+
+                   thead{
+                        tr{  
+                             th{
+                                 padding-bottom: 2rem;
+                                 text-align: left;
+                                 color: $gray-font;
+                                 text-transform: uppercase;
+                                 font-weight: 550;
+                             } 
+                        }
+                   }
+
+                   tbody{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.4rem;
+
+                        tr{
+                            display: flex; 
+                            align-items: center;
+                            justify-content: space-between; 
+                            height: 4.8rem;
+
+                            &:not(:last-child){
+                                border-bottom: 1px solid $gray-border;
+                            }
+
+                            td{
+                                font-weight: 400;
+                            }
+                        }
+                   }
+                }
+            }
+        }
+
+        &_right-content{
+            padding: 10.4rem 0 8.4rem 74.1rem; 
+
+            .content{
+                width: 50rem; 
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+
+                h3{
+                    margin-bottom: 3rem;
+                    width: 47rem;
+                }
+
+               .group{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 100%;
+
+                    .text{
+                        p{
+                            font-weight: 400;
+                        
+                            b{
+                                font-weight: 550;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .background{
+                left: 0;
+                bottom: 0;
+            }
+        }
+
+        &_left-content{
+            padding: 9.6rem 0 0 7.2rem; 
+
+            .content{
+                width: 61.2rem;
+                height: 41.2rem;
+                overflow: hidden;
+            }
+            
+            .background{
+                right: 0;
+                bottom: 0;
+            }
+        }
+
+        &_center-content{
+            padding: 7.2rem 7rem 0 8.9rem; 
+
+            .content{
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+
+                h3{
+                    text-align: center;
+                    margin: 0 auto;
+                    width: 55rem;
+                    margin-bottom: 12rem;
+                    padding-right: 2rem;
+                }
+
+                .group{
+                    display: flex;
+                    justify-content: space-between;
+
+                    .item:first-child .title{
+                        width: 31rem;
+                    }
+
+                    .title{
+                        font-weight: 700;
+                        font-size: 2.4rem;
+                        line-height: 3.6rem;
+                        margin-bottom: 2rem;
+                        width: 27rem; 
+                    }
+
+                    ul{ 
+                        color: $main-menu;
+
+                        li{
+                            position: relative;
+                            padding-left: 2.5rem;
+
+                            &::after{
+                                position: absolute;
+                                content: "―";
+                                left: 0;
+                                top: 50%;
+                                transform: translateY(-50%);
+                            }
+                        }
+                    }
+
+                    .link{
+                        
+                        a{
+                            color: $red;
+                            text-decoration: underline; 
+                            transition: 0.3s;
+
+                            &:hover{
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .background{
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 0;
+                height: 64rem; 
+            }
+        }
+
+        &_vertically-content{  
+            padding: 7.7rem 9.6rem 0 7.2rem;
+            grid-area: vert;
+
+            h3{
+                margin-bottom: 3.2rem;
+            }
+
+            ul{
+                font-weight: 400;
+                color: $main-menu;
+                line-height: 2.88rem; 
+            }
+
+            .background{
+                left: 48%;
+                transform: translateX(-50%);
+                bottom: 0;
+                height: 52rem; 
+            }
+        }
+        
+        &_top-content{  
+            grid-area: topp; 
+            padding: 1rem  7.2rem;
+            
+            .content{ 
+                width: 36.4rem;
+                height: 100%;
+                font-size: 2rem;
+                line-height: 3.2rem;
+                display: flex;
+                align-items: center;
+            }
+             
+            .background{  
+                right: -16.5rem; 
+                bottom: -7.5rem; 
+                height: 40rem;
+                
+                &_additional{
+                    right: -13.5rem; 
+                    bottom: -33rem; 
+                    height: 60rem; 
+                    transform: rotate(-10deg);                   
+                }
+            }
+        }
+        
+        &_bottom-content{  
+            grid-area: bott;
+
+            .content{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 1.5rem;
+                width: 100%;
+                height: 100%; 
+                padding: 2rem 0 0 0 ;
+
+                .num{
+                    font-weight: 700;
+                    font-size: 20rem;
+                    line-height: 27rem;
+                }
+
+                .text{
+                    width: 21.1rem;
+                    font-size: 4rem;
+                    font-weight: 700;
+                    line-height: 5rem;
+                    text-transform: uppercase;
+                }
+
+                .link{
+                    position: absolute;
+                    width: fit-content;
+                    overflow: hidden;
+                    top: 4.7rem;
+                    right: 5.5rem;
+                }
+            }
+        }
+    }
+}
