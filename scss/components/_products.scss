@@ -1,5 +1,5 @@
 .products{
-    padding: 9.6rem 0 9.9rem 0; 
+    padding: 9.6rem 0 9.5rem 0; 
     
     .control{
         position: relative;
@@ -91,7 +91,119 @@
         background-color: $main-menu;
     }
 
-    .swiper-block{
-        border: 1px solid #000;
+    .swiper-group{  
+        margin-top: 5.4rem;
+        
+        .swiper-block{
+            // border: 1px solid #000;
+            display: none;
+
+            &.active{
+                display: block;
+            }
+
+            .item{ 
+                padding: 4.8rem 4rem;
+                background-color: $bg-swiper-card;
+                border-radius: 3.5rem;
+
+                .title{
+                    font-size: 1.8rem;
+                    margin-bottom: 0rem;
+
+                    .model{
+                        display: block;
+                    }
+                }
+                
+                .swiper_product-item{   
+                    position: relative;
+                    height: 39rem;
+                    width: 100%; 
+                    padding-bottom: 6.2rem;
+                    margin-bottom: 1rem;
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .additional{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center; 
+                    color: $gray-font;
+
+                    .info{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.4rem;
+
+                        .availability{
+                            font-size: 1.3rem;
+                            line-height: 1.68rem; 
+                        }
+    
+                        .cash{
+                            display: flex;
+                            gap: 1.1rem;
+                            font-size: 2.4rem;
+                            line-height: 3rem;
+    
+                            .old{
+                                text-decoration: line-through;
+                            }
+    
+                            .new{
+                                color: $main-dark;
+    
+                                font-weight: 700;
+                            }
+                        }
+                    }
+
+                    .actions{
+                        display: flex;
+                        gap: 1.6rem;
+
+                        svg{
+                            width: 4rem;
+                            height: 4rem;
+                        }
+                    }
+                }
+
+                &.no-stock{
+
+                    .title{
+                        color: $gray-font;
+                    }
+
+                    .swiper_product-item{
+                        opacity: 0.5;
+                    }
+
+                    .additional{ 
+                        color: $main-menu;
+                        
+                        .cash{ 
+                            .new{  
+                                color: $main-menu;
+                            }
+                        }
+
+                        .actions{
+
+                            .basket{
+                                pointer-events: none;
+                                filter: grayscale(1);
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
     }
 }

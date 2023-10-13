@@ -25,20 +25,17 @@ $(document).ready(function () {
 
 });
 
-//Объявление слайдеров продукции
-$(document).ready(function () {
 
-    var swiper = new Swiper('[data-products-swiper="durometer"] .swiper', {
-      slidesPerView: 3,
-      spaceBetween: 30, 
+
+$(document).ready(function () {
   
-    //   pagination: {
-    //     el: '[data-products-swiper="durometer"] .swiper-pagination',
-    //     clickable: true,
-    //     dynamicBullets: true,
-    //     dynamicMainBullets: 3,
-    //   },
-    
+  //Объявление слайдера продукции
+    let slider = new Swiper('.swiper_durometer', {
+      slidesPerView: 3,
+      spaceBetween: 30,  
+
+      noSwipingClass: 'swiper_product-item',
+      
       navigation: {
         nextEl: '[data-products-swiper="durometer"] .swiper-button-next',
         prevEl: '[data-products-swiper="durometer"] .swiper-button-prev',
@@ -46,3 +43,28 @@ $(document).ready(function () {
     });
 
   });
+
+
+$(document).ready(function () {
+  
+  //Объявление слайдера продукции
+
+  $('.swiper_product-item').each( function (i) {  
+
+    new Swiper(this, {
+      slidesPerView: 1,
+      spaceBetween: 30,  
+      
+      pagination: {
+        el: ".swiper_product-item .swiper-pagination",
+        clickable: true,
+        dynamicBullets: true,
+        dynamicMainBullets: 3,
+      },
+
+    });
+
+  }); 
+
+});
+ 
